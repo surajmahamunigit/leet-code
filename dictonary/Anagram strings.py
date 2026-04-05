@@ -12,6 +12,7 @@ s2="zaly"
 
 #sort both the string before you compare them
 #because if you just compare s1==s2, it will also consider the position of letters
+#sorted(s1) --> will give you sorted list of the letters in the string
 
 if sorted(s1)==sorted(s2):
     print("s1 and s2 are anagram strings")
