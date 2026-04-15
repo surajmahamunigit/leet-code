@@ -5,22 +5,24 @@ Input: nums = [1, 2, 3, 3]
 Output: true
 """
 
+"""Time complexity is O(n) and space complexity is O(n) due to the set"""
+
 
 class Solution:
     def hasDuplicate(self, nums: list[int]) -> bool:
 
-        # Create a Hashset
-        hashset=set()
-
         # Iterate over each element in the array
+
+        seen=set()
+
         for num in nums:
 
-            # If num in hashset, return True
-            if num in hashset:
+            # If num in seen, return True
+            if num in seen:
                 return True
 
-            # Add num in the hashset
-            hashset.add(num)
+
+            seen.add(num)
 
         # There was no duplicate return False
         return False
@@ -29,3 +31,9 @@ class Solution:
 
 s=Solution()
 print("Array conatins ducplicates: ",s.hasDuplicate([1, 2, 3, 3]))
+
+
+
+################ Method 2 ################
+
+# If extra space is not allowed, I can sort the array and check adjacent elements in O(n log n) time.
