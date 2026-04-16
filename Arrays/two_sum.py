@@ -11,6 +11,9 @@ Input:
 nums = [3,4,5,6], target = 7
 
 Output: [0,1]
+
+Time complexity: O(n) -> to traverse the array
+Space complexity: O(n) -> for map
 """
 
 class Solution:
@@ -25,6 +28,7 @@ class Solution:
             if diff in prevmap:
                 return [prevmap[diff],index]
 
+            # If not present,
             prevmap[num]=index
 
 
