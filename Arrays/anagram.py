@@ -9,8 +9,10 @@ Input: s = "racecar", t = "carrace"
 
 Output: true
 """
+from collections import Counter
 
-# Method 1: using 2 maps
+
+# Method 1: using 2 maps --> Time complexity: O(s+t) , Space Complexity: O(s+t)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
 
@@ -38,3 +40,10 @@ class Solution:
 s=Solution()
 print('Are two strings anagram of each other?:', s.isAnagram("racecar","carrace"))
 
+
+# Using Counter --> Time complexity: O(s+t) , Space Complexity: O(s+t)
+s1='racecar'
+t1='carrace'
+
+result = (Counter(s1) == Counter(t1))
+print('Given strings are anagram of each other?:', result)
