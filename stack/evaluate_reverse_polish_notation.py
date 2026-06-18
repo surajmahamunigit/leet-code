@@ -40,6 +40,6 @@ class Solution:
 
         return stack[0]
 
-result = Solution().evalRPN(["2", "1", "+", "3", "*", "2", "-"])
+result = Solution().evalRPN(["2", "1", "+", "3", "*", "2", "- "])
 print(result)
 
