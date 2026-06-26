@@ -1,34 +1,26 @@
-from collections import defaultdict
-
-
 class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        """
-        Args:
-            list[str] : List of strings
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
 
-        Returns:
-            list[list[str]] : Group of anagrams
+        count = {}
+        frequency = [[] for occurrence in range(len(nums) + 1)]
 
-        Time: O(n*k)    # n= number of words, k= avg word length
-        Space: O(n*k)
-        """
+        # Count the occurrence
+        for num in nums:
+            count[num] = 1 + count.get(num, 0)
 
-        result = defaultdict(list)
+        # Add num and occurrence to the bucket list
+        for num, occurrence in count.items():
+            frequency[occurrence].append(num)
 
-        # Group of words -> word -> char count
-        for word in strs:
+        # Read top k num
+        result = []
 
-            char_count = [0] * 26
-            for ch in word:
+        for index in range(len(frequency) - 1, 0, -1):
+            for num in frequency[index]:
+                result.append(num)
 
-                ch_index = ord(ch) - ord("a")
-                char_count[ch_index] += 1
+                if len(result) == k:
+                    return result
 
-            result[tuple(char_count)].append(word)
-
-        return list(result.values())
-
-
-result = Solution().groupAnagrams(["cat", "act", "dog"])
+result = Solution().topKFrequent(nums=[1,1,2,3,4,5,5], k=2)
 print(result)
