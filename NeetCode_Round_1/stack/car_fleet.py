@@ -14,6 +14,7 @@ class Solution:
         """
 
         pair = [[position, speed] for position, speed in zip(positions, speeds)]    # [position : speed] pair for each car
+
         stack = []      # stack to store time taken by each car to each target
 
         for position, speed in sorted(pair, reverse=True):
