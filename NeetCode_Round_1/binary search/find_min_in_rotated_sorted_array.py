@@ -1,36 +1,23 @@
 class Solution:
-    def findMin(self, nums: list[int]) -> int :
-        """
-        Args:
-            nums: list of rotated sorted numbers
+    def findMin(self, nums: list[int]) -> int:
 
-        Returns:
-            smallest number from given list
-
-        Time: O(log n) - n = len(nums)
-        Space: O(1)
-        """
-
-        # Binary Search -> left, right, middle
-        # Rule:
-        # if nums[middle] > nums[right] -> left = mid + 1, otherwise right = mid
+        # Binary search -> left, right, middle
+        # rules: if nums[middle] > nums[right]: left = mid + 1, otherwise right = mid
 
         left = 0
         right = len(nums) - 1
 
-        while left < right:         # Binary search but still -> left < right
+        while left < right:         # remeber its left < right, despite binary search pattern
 
             middle = (left + right) // 2
-
             mid_num = nums[middle]
 
             if mid_num > nums[right]:
-                left = middle + 1
+                left = middle + 1          # remember its mid + 1
 
             else:
-                right = middle
+                right = middle             # its mid, not mid - 1. otherwise we might miss middle
 
-        return nums[left]
+        return nums[left]               # remember
 
-result = Solution().findMin([0,1,2,3,4,5])
-print(result)
+
