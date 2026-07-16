@@ -13,8 +13,8 @@ class Solution:
         Returns:
             reversed list
 
-        Time: O(n) - n = length of list
-        Space: O(1)
+        Time:
+        Space:
         """
 
         prev = None
