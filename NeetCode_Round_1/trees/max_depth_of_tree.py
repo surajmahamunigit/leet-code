@@ -6,21 +6,21 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        """Returns the max depth of the tree.
 
-        Args:
-            root: root node of the given tree
-
-        Returns:
-            max depth of the tree
-
-        Time: O(n) - visits every node once
-        Space: O(h) - h = height of tree
-        """
-
-        # step 1: base case
-        if not root:
-            return 0
+        # step 1: also takes care of base-case
+        stack = [[root, 1]]     # [node, depth]
+        result = 0              # node might be null
 
         # step 2:
-        return (1 + max(self.maxDepth(root.left), self.maxDepth(root.right)))
+        while stack:
+
+            node, depth = stack.pop()       # pop the top
+
+            if node:                            # if node is not null
+                result = max(result, depth)     # then compare its depth with result
+
+                # append right and left
+                stack.append([node.left, depth + 1])
+                stack.append([node.right, depth + 1])
+
+        return result
