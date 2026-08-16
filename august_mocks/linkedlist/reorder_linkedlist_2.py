@@ -1,9 +1,9 @@
 # 6.36
 
 class Node:
-    def __init__(self, val):
+    def __init__(self, val=0, next=None):
         self.val = val
-        self.next = None
+        self.next = next
 
 class Solution:
     def reorderList(self, head: Node) -> None:
@@ -18,7 +18,7 @@ class Solution:
         Time: O(n) - n = length of linked list
         Space: O(1)
         """
-        dummy = Node(0, head)
+
         left = head
         right = head.next
         while right and right.next:
@@ -33,7 +33,7 @@ class Solution:
             next_node = curr.next
             curr.next = prev
             prev = curr
-            curr = curr.next
+            curr = next_node
 
         first = head
         second = prev
@@ -48,6 +48,6 @@ class Solution:
             first = temp1
             second = temp2
 
-        return dummy.next
+        return head
 
 # 6.44 -> 8 min to finish
