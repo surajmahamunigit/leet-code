@@ -40,7 +40,7 @@ class Solution:
 
                     # move left for next possibility and eliminate the duplicate
                     left += 1
-                    while left < right and nums[left] == nums[left - 1]:
+                    if left < right and nums[left] == nums[left - 1]:
                         left += 1
 
 
