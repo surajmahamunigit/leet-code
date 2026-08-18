@@ -27,7 +27,7 @@ class Solution:
         # walk list 1st time
         copy_map = {None:None}
         while curr:
-            new_node = ListNode(val=curr.val)
+            new_node = ListNode(val=curr.val, next=curr.next, random=curr.random)
             copy_map[curr] = new_node
             curr = curr.next
 
