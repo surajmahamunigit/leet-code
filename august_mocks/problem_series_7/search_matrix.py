@@ -29,9 +29,9 @@ class Solution:
                 return True
 
             if val < target:
-                left += 1
+                left = index + 1
             else:
-                right -= 1
+                right = index - 1
 
         return False
 
