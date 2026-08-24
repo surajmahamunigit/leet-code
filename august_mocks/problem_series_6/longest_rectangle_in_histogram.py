@@ -22,7 +22,7 @@ class Solution:
         for index in range(len(heights)):
             start = index
             curr_height = heights[index]
-            if stack and stack[-1][1] > curr_height:
+            while stack and stack[-1][1] > curr_height:
                 stack_index, stack_height = stack.pop()
                 stack_area = (index - stack_index) * stack_height
                 max_area = max(max_area, stack_area)
