@@ -19,8 +19,8 @@ class Solution:
         right = len(nums) - 1
 
         while left < right:
-            index = (left + right) // 2
-            val = nums[index]
+
+            val = nums[left] + nums[right]
 
             if val == target:
                 return [left+1, right+1]

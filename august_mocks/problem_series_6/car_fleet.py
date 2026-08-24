@@ -22,9 +22,9 @@ class Solution:
         group = [[pos, sp] for pos, sp in zip(position, speed)]
 
         for pos, sp in sorted(group, reverse=True):
-            time_needed = (target - position) / sp
+            time_needed = (target - pos) / sp
 
-            if time_needed <= stack[-1]:
+            if stack and time_needed <= stack[-1]:
                 continue
 
             stack.append(time_needed)

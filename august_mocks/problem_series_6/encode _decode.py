@@ -35,11 +35,12 @@ class Solution:
         Space: O(1)
         """
         result = []
+        index = 0
 
         while index < len(s):
             left = index
             while s[index] != "#":
-                continue
+                index += 1
 
             word_len = int(s[left : index])
             result.append(s[index + 1 : index + 1 + word_len])

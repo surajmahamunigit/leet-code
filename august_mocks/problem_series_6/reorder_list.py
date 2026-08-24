@@ -17,8 +17,8 @@ class Solution:
         Returns:
             reordered list
 
-        Time: O()
-        Space: O()
+        Time: O(n) - number of nodes in list
+        Space: O(1)
         """
 
 
