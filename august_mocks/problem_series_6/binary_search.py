@@ -27,7 +27,7 @@ class Solution:
             elif val < target:
                 left = index + 1
             else:
-                return
+                return index
 
         return -1
 
