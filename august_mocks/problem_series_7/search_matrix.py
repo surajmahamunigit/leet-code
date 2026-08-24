@@ -13,7 +13,7 @@ class Solution:
         Returns:
             True if target number found, else False
 
-        Time: O(m*n) - m, n = number of rows and columns in matrix
+        Time: O(log(m*n)) - m, n = number of rows and columns in matrix
         Space: O(1)
         """
         left = 0
