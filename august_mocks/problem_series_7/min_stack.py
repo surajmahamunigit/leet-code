@@ -21,7 +21,7 @@ class MinStack:
         self.stack.append(val)
 
         if self.min_stack:
-            self.min_stack(min(self.min_stack[-1]), val)
+            self.min_stack.append(min(self.min_stack[-1], val))
         else:
             self.min_stack.append(val)
 
