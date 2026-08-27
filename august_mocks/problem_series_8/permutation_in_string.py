@@ -12,7 +12,7 @@ class Solution:
             True if s2 contains s1, else False
 
         Time: O(n) - n = len(s2)
-        Space: O(n)
+        Space: O(1)
         """
 
         # character count s1

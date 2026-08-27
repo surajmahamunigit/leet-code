@@ -27,7 +27,7 @@ class Solution:
                 if char == ".":
                     continue
 
-                if char in rows[row] or char in columns[col] or char in squares(row//3, col//3):
+                if char in rows[row] or char in columns[col] or char in squares[(row//3, col//3)]:
                     return False
 
                 rows[row].append(char)

@@ -12,7 +12,7 @@ class Solution:
             encoded string
 
         Time: O(n) - n = total characters in strs
-        Space: O(1)
+        Space: O(n)
         """
         encoded = ""
 
