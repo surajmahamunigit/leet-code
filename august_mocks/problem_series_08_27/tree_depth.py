@@ -1,4 +1,6 @@
 # 9.27
+from logging import root
+
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -35,3 +37,10 @@ class Solution:
 
 
 # 9.39 -> 12 min to solve
+
+        # recursive approach
+
+        if not root:
+            return None
+
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
