@@ -12,25 +12,24 @@ class Solution:
         Returns:
             int: minimum eating speed
 
-        Time: O(n) - n = max(piles)
-        Speeed: O(1)
+        Time: O(n log m) - m = max(piles), n = len(piles)
+        Space: O(1)
         """
+        # eating speed 1 -> max(piles)
 
-        # eating speed -> 1 -> max(piles)
         result = max(piles)
-
         left = 1
         right = max(piles)
 
-        while left < right:
-            min_speed = (left + right) // 2
-            needed_time = sum(math.ceil(pile / min_speed) for pile in piles)
+        while left <= right:
+            sp = (left + right) // 2
+            needed_time = sum(math.ceil(pile/sp) for pile in piles)
 
             if needed_time <= h:
-                result = min(result, min_speed)
-                right = min_speed - 1
+                result = min(result, sp)
+                right = sp - 1
             else:
-                left = min_speed + 1
+                left = sp + 1
 
         return result
 
