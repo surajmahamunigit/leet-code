@@ -21,6 +21,10 @@ class Solution:
         Space: O(h) - h = height of the given tree
         """
 
+        # base case
+        if not root:
+            return 0
+
         return 1 + max(self.maxDepthRecursive(root.left), self.maxDepthRecursive(root.right))
 
     def maxDepthIterative(self, root: TreeNode) -> int:
@@ -38,7 +42,7 @@ class Solution:
 
         max_depth = 0
 
-        stack = [root, 0]
+        stack = [[root, 1]]
 
         while stack:
             node, depth = stack.pop()
