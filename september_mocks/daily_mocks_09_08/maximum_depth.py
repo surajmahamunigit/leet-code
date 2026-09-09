@@ -1,0 +1,54 @@
+# 8.49
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def maxDepthRecursive(self, root: TreeNode) -> int:
+        """Find the maximum depth of the given tree.
+
+        Args:
+            root: (TreeNode): given binary tree
+
+        Returns:
+            int: maximum depth of the binary tree
+
+        Time: O(n) - n = number of nodes in given tree
+        Space: O(h) - h = height of the given tree
+        """
+
+        return 1 + max(self.maxDepthRecursive(root.left), self.maxDepthRecursive(root.right))
+
+    def maxDepthIterative(self, root: TreeNode) -> int:
+        """Find the maximum depth of the given tree.
+
+        Args:
+            root: (TreeNode): given binary tree
+
+        Returns:
+            int: maximum depth of the binary tree
+
+        Time: O(n) - n = number of nodes in given tree
+        Space: O(h) - h = height of the given tree
+        """
+
+        max_depth = 0
+
+        stack = [root, 0]
+
+        while stack:
+            node, depth = stack.pop()
+
+            if node:
+                max_depth = max(max_depth, depth)
+
+                stack.append([node.left, depth + 1])
+                stack.append([node.right, depth + 1])
+
+        return max_depth
+
+# 8.58 -> 9 min
