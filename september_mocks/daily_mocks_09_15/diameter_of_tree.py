@@ -1,0 +1,41 @@
+# 12.24
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        """Find the diameter of binary tree.
+
+        Args:
+            root (TreeNode): root node of the tree.
+
+        Returns:
+            int: diameter of binary tree.
+
+        Time: O(n) - n = total number of nodes in the tree.
+        Space: O(h) - h = height of the given tree.
+        """
+
+        # return the height, calculate the diameter
+        diameter = 0
+
+        def dfs(node):
+
+            # base condition
+            if not node:
+                return 0
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+            nonlocal diameter
+            diameter = max(diameter, left + right)
+
+            return 1 + max(left, right)
+        dfs(root)
+
+        return diameter
