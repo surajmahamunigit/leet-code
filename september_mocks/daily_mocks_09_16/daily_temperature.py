@@ -10,9 +10,9 @@ class Solution:
         Returns:
             list[int]: Array of days till warm temperatures for each day in array.
 
-        Time: O()
+        Time: O(n) - n = len(temperatures)
 
-        Space: O()
+        Space: O(n)
         """
 
         # temperatures = [30,38,30,36,35,40,28]
