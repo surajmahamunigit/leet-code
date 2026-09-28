@@ -43,6 +43,6 @@ class Solution:
         return False
 
 s = Solution()
-print(s.check_inclusion("ab", "abc"))
+print(s.check_inclusion("ab", "Abc"))
 print(s.check_inclusion(s1 = "abc", s2 = "lecabee"))
 print(s.check_inclusion(s1 = "abc", s2 = "a"))
