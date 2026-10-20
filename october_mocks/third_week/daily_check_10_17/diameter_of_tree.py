@@ -6,7 +6,7 @@
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val= val
-        self.let = left
+        self.left = left
         self.right = right
 
 class Solution:
@@ -14,7 +14,7 @@ class Solution:
         """Find the diameter of the tree.
 
         Args:
-            root (ListNode|None): root of the given tree
+            root (TreeNode|None): root of the given tree
 
         Returns:
              int: diameter of the given tree
