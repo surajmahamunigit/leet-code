@@ -40,6 +40,10 @@ def check(values):
     result = s.reverseList(build_list(values))
     assert list_to_values(result) == values[::-1], f"failed for {values}"
 
-check([1,2,3,4])
-check([])
+check([1])               # smallest non-empty
+check([1, 2])            # smallest list that actually changes
+check([1, 2, 3])         # odd length
+check([2, 2, 2])         # duplicates (the answer equals the input, which hides some bugs)
+check([-3, 0, 5, -1])    # negatives
+check(list(range(5000))) # long list
 print("all passed")
