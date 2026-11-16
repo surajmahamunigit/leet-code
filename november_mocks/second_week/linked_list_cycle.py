@@ -13,7 +13,7 @@ class Solution:
             head|None: head node of the given linked list
 
         Returns:
-            boo: True if the list has cycle, else False
+            boo: True if the list has a cycle, else False
 
         Time complexity: O(n) - n = number of nodes in the list
 
